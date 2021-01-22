@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { GlobalProvider } from "./state/GlobalContext";
+import ComponentA from "./ComponentA";
+import ComponentB from "./ComponentB";
+import ComponentC from "./ComponentC";
+
 
 function App() {
+  console.log("App.js re-render")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <ComponentA />
+      <ComponentB />
+      <ComponentC />
+    </GlobalProvider>
   );
 }
 
